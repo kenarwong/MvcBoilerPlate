@@ -8,6 +8,7 @@ using MvcBoilerPlate.auth;
 namespace MvcBoilerPlate.Controllers
 {
     [AuthenticateRole]
+    [AuthorizeRole]
     public class HomeController : BaseController
     {
         //
@@ -19,10 +20,17 @@ namespace MvcBoilerPlate.Controllers
 
         //
         // GET: /Home/Restricted
-        [AuthorizeRole]
-        public ActionResult Restricted()
+        [RoleTypeAction("Admin")]
+        public ActionResult Restricted(string role)
         {
             return View();
+        }
+
+        //
+        // GET: /Home/NotAuthorized
+        public ActionResult NotAuthorized()
+        {
+            return View("~/Views/Shared/NoAuth.cshtml");
         }
 
     }

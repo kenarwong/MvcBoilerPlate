@@ -24,9 +24,13 @@ namespace MvcBoilerPlate
                       ));
 
             // CSS bundles
-            StyleBundle cssBundle = new StyleBundle("~/Content/css");
-            cssBundle.Include("~/Content/bootstrap.css", new CssRewriteUrlTransform());
+            StyleBundle cssBundle = new StyleBundle("~/Content/pkgs");
+            cssBundle.Include("~/Content/bootstrap/bootstrap.css", new CssRewriteUrlTransform());
             bundles.Add(cssBundle);
+
+            bundles.Add(new StyleBundle("~/Content/style").Include(
+                        "~/Content/site.css"
+                		));
         }
     }
 }

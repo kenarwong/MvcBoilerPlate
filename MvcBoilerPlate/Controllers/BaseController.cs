@@ -10,13 +10,6 @@ namespace MvcBoilerPlate.Controllers
 {
     public class BaseController : Controller
     {
-        //
-        // GET: /Base/
-
-        public ActionResult NoAuth()
-        {
-            return View("~/Views/Shared/NoAuth.cshtml");
-        }
 
         protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)
         {

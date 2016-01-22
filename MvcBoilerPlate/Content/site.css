@@ -1,0 +1,63 @@
+﻿/* main styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', Calibri, Candara, Arial, sans-serif;
+}
+.clearFix {
+    clear: both;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-inverse .navbar-text .glyphicon-user:hover {
+    color: white;
+    cursor: pointer;
+}
+
+
+/* navigation */
+.nav li a {
+    padding: 10px 15px;
+}
+
+/* responsive */
+@media screen and (max-width:60em) {
+    #nav ul li a {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width:44em) {
+    #nav ul > li {
+        width: 100%;
+        display: list-item;
+    }
+    #nav ul, #nav ul > li > ul {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    #nav ul li a {
+        background-color: #062653 ; 
+		padding-top: 8px;
+    }
+    #nav ul li ul li a {
+        background-color: #163e76; 
+		padding-top: 8px;
+    }
+    #nav ul > li.selected > a {
+        background-color: #163e76 /*#062653 */; 
+    }
+    #nav ul > li.selected > ul > li > a {
+        background-color: #245fb3 /* #163e76 */; 
+    }	
+	
+	ul, menu, dir {
+		-webkit-padding-start: 0px;
+	}
+}

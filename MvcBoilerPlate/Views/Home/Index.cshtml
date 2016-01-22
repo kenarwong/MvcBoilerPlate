@@ -5,6 +5,7 @@
 
 <h2>Index</h2>
 
-@Html.ActionLink("Restricted", "Restricted", "Home")
-
-
+<ul>
+    <li>@Html.ActionLink("Restricted page as an admin", "Restricted", new { role = "Admin" })</li>
+    <li>@Html.ActionLink("Restricted page as non-admin", "Restricted", new { role = "NonAdmin" })</li>
+</ul>

@@ -29,13 +29,13 @@ namespace MvcBoilerPlate.auth
         {
             bool hasAccess;
 
-            hasAccess = true;
+            hasAccess = true; // Replace this with SQL query to find out if the user is authenticated with the system
 
             if (!hasAccess)
             {
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary {
-                    { "action", "NoAuth" },
-                    { "controller", "Base" }
+                    { "action", "NotAuthorized" },
+                    { "controller", "Home" }
                 });
             }
         }
@@ -50,43 +50,29 @@ namespace MvcBoilerPlate.auth
 
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            bool hasAccess;
+            bool hasAccess = false;
 
-            hasAccess = false;
-
-            if (!hasAccess)
+            // If a role type is required, check if user's role type action is allowed
+            if (filterContext.ActionDescriptor.GetCustomAttributes(typeof(RoleTypeActionAttribute), true).Length > 0)
             {
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary {
-                    { "action", "NoAuth" },
-                    { "controller", "Base" }
+                // get the role for this action
+                string roleType = ((RoleTypeActionAttribute)filterContext.ActionDescriptor.GetCustomAttributes(typeof(RoleTypeActionAttribute), true)[0]).GetRoleType();
+
+                // -- Replace this with a SQL query to find out if the user is authorized with the specified role type (e.g. Admin) --
+                if (filterContext.Controller.ValueProvider.GetValue("role") != null)
+                {
+                    hasAccess = roleType == filterContext.Controller.ValueProvider.GetValue("role").AttemptedValue; 
+                }
+                // ----
+
+                if (!hasAccess)
+                {
+                    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary {
+                    { "action", "NotAuthorized" },
+                    { "controller", "Home" }
                 });
+                }
             }
-
-            //usrCtx = new UserContext(HttpContext.Current);
-            //List<UserRole> usrRoles = usrCtx.GetUserActions().ToList();
-
-            //// Check role access
-            //hasAccess = usrRoles.Where(
-            //        item => item.CONTROLLER == filterContext.ActionDescriptor.ControllerDescriptor.ControllerName).Count() > 0;
-
-            //if (filterContext.ActionDescriptor.GetCustomAttributes(typeof(RoleTypeActionAttribute), true).Length > 0)
-            //{
-            //    // If a role type is required, check if user's role type action is allowed
-            //    string roleType = ((RoleTypeActionAttribute)filterContext.ActionDescriptor.GetCustomAttributes(typeof(RoleTypeActionAttribute), true)[0]).GetRoleType();
-
-            //    hasAccess = usrRoles.Where(
-            //        item => item.CONTROLLER == filterContext.ActionDescriptor.ControllerDescriptor.ControllerName
-            //        && item.ROLE_TYPE_DESCRIPTION == roleType).Count() > 0;
-            //}
-            
-            //if (!hasAccess)
-            //{
-            //    filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary {
-            //        { "action", "NoAuth" },
-            //        { "controller", "Role" }
-            //    });
-            //}
-            //base.OnAuthorization(filterContext);
         }
     }
 }

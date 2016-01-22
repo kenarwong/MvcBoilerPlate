@@ -14,7 +14,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@title</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/pkgs")
+    @Styles.Render("~/Content/style")
 </head>
 <body>
     <nav id="header" class="navbar navbar-inverse">
@@ -31,15 +32,26 @@
                 </div>
                 <div class="navbar-text pull-right">
                     @usrTxt
+                    <span class="glyphicon glyphicon-user"></span>
                 </div>
             </div>
             <div class="container">
                 <div class="navbar-collapse collapse navbar-right text-right" role="navigation">
-                    @*@Html.Action("RoleNav", "Navigation", new { activeItem = role })*@
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a>Link 1</a></li>
+                        <li><a>Link 2</a></li>
+                        <li><a>Link 3</a></li>
+                    </ul>
+                    @*@Html.Action("Main", "Navigation", new { activeItem = role })*@
                 </div>
             </div>
             <div class="container">
                 <div class="navbar-collapse collapse navbar-right" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li><a>Sub Link 1</a></li>
+                        <li><a>Sub Link 2</a></li>
+                        <li><a>Sub Link 3</a></li>
+                    </ul>
                     @*@Html.Action("SubNav", "Navigation", new { role = role, activeItem = action })*@
                 </div>
             </div>

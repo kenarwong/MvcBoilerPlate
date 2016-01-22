@@ -8,7 +8,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@title</title>
-    @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/pkgs")
+        @Styles.Render("~/Content/style")
 </head>
 <body>
     <nav id="header" class="navbar navbar-inverse">
@@ -32,7 +33,7 @@
             <p>&copy; @DateTime.Now.Year - College of the Liberal Arts</p>
         </footer>
     </div>
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/libs")
+    @RenderSection("page", required: false)
 </body>
 </html>
