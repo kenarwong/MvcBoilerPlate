@@ -1,0 +1,58 @@
+﻿@{
+    string role = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+    string action = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString();
+    //string title = role + " | " + action;
+    string title = action;
+
+    string userName = "User";
+    string usrTxt = String.Format("Welcome {0}!", userName);
+     
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@title</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <nav id="header" class="navbar navbar-inverse">
+        <div class="container">
+            <div class="container">
+                <div id="header_logo"></div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="header_text_main">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-brand" })</div>
+                </div>
+                <div class="navbar-text pull-right">
+                    @usrTxt
+                </div>
+            </div>
+            <div class="container">
+                <div class="navbar-collapse collapse navbar-right text-right" role="navigation">
+                    @*@Html.Action("RoleNav", "Navigation", new { activeItem = role })*@
+                </div>
+            </div>
+            <div class="container">
+                <div class="navbar-collapse collapse navbar-right" role="navigation">
+                    @*@Html.Action("SubNav", "Navigation", new { role = role, activeItem = action })*@
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - College of the Liberal Arts</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/libs")
+    @RenderSection("page", required: false)
+</body>
+</html>
