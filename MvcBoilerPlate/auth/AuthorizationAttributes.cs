@@ -58,12 +58,18 @@ namespace MvcBoilerPlate.auth
                 // get the role for this action
                 string roleType = ((RoleTypeActionAttribute)filterContext.ActionDescriptor.GetCustomAttributes(typeof(RoleTypeActionAttribute), true)[0]).GetRoleType();
 
-                // -- Replace this with a SQL query to find out if the user is authorized with the specified role type (e.g. Admin) --
+                
                 if (filterContext.Controller.ValueProvider.GetValue("role") != null)
                 {
-                    hasAccess = roleType == filterContext.Controller.ValueProvider.GetValue("role").AttemptedValue; 
+                    foreach (string s in roleType.Split(new string[] { "," }, StringSplitOptions.None))
+                    {
+                        hasAccess = s ==
+                            // -- Replace this with a SQL query to find out if the user is authorized with the specified role type (e.g. Admin) --
+                            filterContext.Controller.ValueProvider.GetValue("role").AttemptedValue;
+                            // ----
+                        if (hasAccess) { break; }
+                    }
                 }
-                // ----
 
                 if (!hasAccess)
                 {

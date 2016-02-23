@@ -20,7 +20,7 @@ namespace MvcBoilerPlate.Controllers
 
         //
         // GET: /Home/Restricted
-        [RoleTypeAction("Admin")]
+        [RoleTypeAction("Admin,Test1")]
         public ActionResult Restricted(string role)
         {
             return View();
