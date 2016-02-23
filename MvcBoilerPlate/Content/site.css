@@ -14,7 +14,7 @@ html, body {
     padding-right: 15px;
 }
 
-.navbar-inverse .navbar-text .glyphicon-user:hover {
+.navbar-inverse .navbar-text .glyphicon-user:hover, .main-nav li > a, .sub-nav li > a {
     color: white;
     cursor: pointer;
 }

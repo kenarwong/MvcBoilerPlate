@@ -58,7 +58,6 @@ namespace MvcBoilerPlate.auth
                 // get the role for this action
                 string roleType = ((RoleTypeActionAttribute)filterContext.ActionDescriptor.GetCustomAttributes(typeof(RoleTypeActionAttribute), true)[0]).GetRoleType();
 
-                
                 if (filterContext.Controller.ValueProvider.GetValue("role") != null)
                 {
                     foreach (string s in roleType.Split(new string[] { "," }, StringSplitOptions.None))
