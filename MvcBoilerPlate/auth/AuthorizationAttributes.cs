@@ -35,7 +35,7 @@ namespace MvcBoilerPlate.auth
             {
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary {
                     { "action", "NotAuthorized" },
-                    { "controller", "Home" }
+                    { "controller", "Base" }
                 });
             }
         }
@@ -74,7 +74,7 @@ namespace MvcBoilerPlate.auth
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary {
                     { "action", "NotAuthorized" },
-                    { "controller", "Home" }
+                    { "controller", "Base" }
                 });
                 }
             }

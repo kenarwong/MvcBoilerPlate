@@ -16,7 +16,7 @@ namespace MvcBoilerPlate
             routes.MapRoute(
                 name: "NoAuth",
                 url: "NotAuthorized/",
-                defaults: new { controller = "Home", action = "NotAuthorized", id = UrlParameter.Optional }
+                defaults: new { controller = "Base", action = "NotAuthorized", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

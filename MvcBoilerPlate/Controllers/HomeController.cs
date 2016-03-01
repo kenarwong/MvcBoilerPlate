@@ -26,12 +26,5 @@ namespace MvcBoilerPlate.Controllers
             return View();
         }
 
-        //
-        // GET: /Home/NotAuthorized
-        public ActionResult NotAuthorized()
-        {
-            return View("~/Views/Shared/NoAuth.cshtml");
-        }
-
     }
 }

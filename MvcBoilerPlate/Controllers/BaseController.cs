@@ -22,5 +22,12 @@ namespace MvcBoilerPlate.Controllers
             };
         }
 
+        //
+        // GET: /Home/NotAuthorized
+        public ActionResult NotAuthorized()
+        {
+            return View("~/Views/Shared/NoAuth.cshtml");
+        }
+
     }
 }
