@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,13 @@ namespace MvcBoilerPlate.Controllers
 {
     public class BaseController : Controller
     {
+        public class AjaxRequestAttribute : ActionMethodSelectorAttribute
+        {
+            public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
+            {
+                return controllerContext.HttpContext.Request.IsAjaxRequest();
+            }
+        }
 
         protected override JsonResult Json(object data, string contentType, Encoding contentEncoding, JsonRequestBehavior behavior)
         {
