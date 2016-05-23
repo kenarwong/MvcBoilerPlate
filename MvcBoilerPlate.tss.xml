@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\views\home\index.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\views\web.config</string>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\web.config</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\global.asax.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\KHwang\Documents\Visual Studio 2013\Projects\MvcBoilerPlate\MvcBoilerPlate\Views\Home\Restricted.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\content\site.css</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\controllers\homecontroller.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\util\jsonnetresult.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\models\sqlentities.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\app_start\routeconfig.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\KHwang\Documents\Visual Studio 2013\Projects\MvcBoilerPlate\MvcBoilerPlate\Controllers\BaseController.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\auth\authorizationattributes.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\views\shared\_menulayout.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\app_start\bundleconfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\khwang\documents\visual studio 2013\projects\mvcboilerplate\mvcboilerplate\views\shared\_blanklayout.cshtml</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>
