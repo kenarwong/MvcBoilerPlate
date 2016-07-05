@@ -1,6 +1,14 @@
 ﻿CREATE TABLE [dbo].[User]
 (
-	[UserId] INT NOT NULL PRIMARY KEY, 
-    [FirstName] NCHAR(10) NOT NULL, 
-    [LastName] NCHAR(10) NOT NULL
-)
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[Identifier] [varchar](100) NOT NULL,
+	[FirstName] [nvarchar](30) NOT NULL,
+	[LastName] [nvarchar](30) NOT NULL,
+	[UserName] [nvarchar](30) NOT NULL,
+	[Domain] [nvarchar](50) NOT NULL,
+	[Email] [nvarchar](256) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]

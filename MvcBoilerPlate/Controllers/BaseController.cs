@@ -6,11 +6,19 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using MvcBoilerPlate.util;
+using MvcBoilerPlate.Models;
 
 namespace MvcBoilerPlate.Controllers
 {
     public class BaseController : Controller
     {
+        #region Protected Properties
+        protected string UserName { get; private set; }
+        protected int UserID { get; private set; }
+        protected Role UserRole { get; private set; }
+        #endregion
+
+        #region Helper Classes
         public class AjaxRequestAttribute : ActionMethodSelectorAttribute
         {
             public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
@@ -29,13 +37,22 @@ namespace MvcBoilerPlate.Controllers
                 JsonRequestBehavior = behavior
             };
         }
+        #endregion
 
+        #region Shared Route
         //
-        // GET: /Home/NotAuthorized
+        // GET: /NotAuthorized
         public ActionResult NotAuthorized()
         {
             return View("~/Views/Shared/NoAuth.cshtml");
         }
+        #endregion
 
+        #region Events
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+        }
+        #endregion
     }
 }

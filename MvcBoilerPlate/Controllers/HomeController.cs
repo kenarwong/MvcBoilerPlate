@@ -7,8 +7,7 @@ using MvcBoilerPlate.auth;
 
 namespace MvcBoilerPlate.Controllers
 {
-    [AuthenticateRole]
-    [AuthorizeRole]
+    [CustomerAuthorizeAttribute]
     public class HomeController : BaseController
     {
         //
@@ -20,7 +19,7 @@ namespace MvcBoilerPlate.Controllers
 
         //
         // GET: /Home/Restricted
-        [RoleTypeAction("Admin,Test1")]
+        //[RoleTypeAction("Admin,Test1")]
         public ActionResult Restricted(string role)
         {
             return View();
